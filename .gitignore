@@ -1,0 +1,12 @@
+.venv/
+.idea/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+notebooks/lightning_logs/
+.tmp_*
+data/raw/
+data/processed/
+reports/figures/
+*.pkl
+*.joblib

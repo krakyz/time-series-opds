@@ -1,0 +1,132 @@
+{
+  "quick_mode": false,
+  "forecast_horizon_hours": 24,
+  "final_model": "RandomForest",
+  "baseline_model": "SeasonalNaive_168h",
+  "forecast_scores": {
+    "MAE": 1.4309706745077837,
+    "RMSE": 2.30599111310752,
+    "SMAPE": 2.612156863352009
+  },
+  "seasonal_naive_scores": {
+    "MAE": 2.5594957646520142,
+    "RMSE": 4.469019493692613,
+    "SMAPE": 4.682306429038089
+  },
+  "forecast_scores_table": [
+    {
+      "model": "RandomForest",
+      "MAE": 1.4309706745077837,
+      "RMSE": 2.30599111310752,
+      "SMAPE": 2.612156863352009
+    },
+    {
+      "model": "SeasonalNaive_168h",
+      "MAE": 2.5594957646520142,
+      "RMSE": 4.469019493692613,
+      "SMAPE": 4.682306429038089
+    }
+  ],
+  "performance_seconds": [
+    {
+      "stage": "RandomForest fit",
+      "seconds": 27.30744670002605,
+      "rows": 34896,
+      "notes": "Обучение финальной модели"
+    },
+    {
+      "stage": "RandomForest predict",
+      "seconds": 0.17232569999760017,
+      "rows": 8736,
+      "notes": "Инференс на test-периоде"
+    }
+  ],
+  "n_train_rows": 34896,
+  "n_test_rows": 8736,
+  "feature_count": 21,
+  "feature_columns": [
+    "hour_sin",
+    "hour_cos",
+    "month_sin",
+    "month_cos",
+    "day_of_week",
+    "is_weekend",
+    "lag_1",
+    "lag_2",
+    "lag_3",
+    "lag_24",
+    "lag_48",
+    "lag_168",
+    "rolling_mean_24",
+    "rolling_std_24",
+    "rolling_mean_168",
+    "temperature",
+    "radiation_direct_horizontal",
+    "radiation_diffuse_horizontal",
+    "Wind",
+    "Solar",
+    "Wind+Solar"
+  ],
+  "anomaly_contamination": 0.01,
+  "anomaly_counts": {
+    "anomaly_one_class_svm": 264,
+    "anomaly_isolation_forest": 263,
+    "anomaly_lof": 263,
+    "is_anomaly": 101,
+    "anomaly_zscore": 56
+  },
+  "synthetic_anomaly_benchmark": [
+    {
+      "method": "anomaly_lof",
+      "precision": 0.7727272727272727,
+      "recall": 0.8095238095238095,
+      "f1": 0.7906976744186046,
+      "detected_count": 22,
+      "synthetic_count": 21
+    },
+    {
+      "method": "is_anomaly",
+      "precision": 0.8235294117647058,
+      "recall": 0.6666666666666666,
+      "f1": 0.7368421052631579,
+      "detected_count": 17,
+      "synthetic_count": 21
+    },
+    {
+      "method": "anomaly_zscore",
+      "precision": 0.7333333333333333,
+      "recall": 0.5238095238095238,
+      "f1": 0.6111111111111112,
+      "detected_count": 15,
+      "synthetic_count": 21
+    },
+    {
+      "method": "anomaly_one_class_svm",
+      "precision": 0.25,
+      "recall": 0.38095238095238093,
+      "f1": 0.3018867924528302,
+      "detected_count": 32,
+      "synthetic_count": 21
+    },
+    {
+      "method": "anomaly_isolation_forest",
+      "precision": 0.13636363636363635,
+      "recall": 0.14285714285714285,
+      "f1": 0.13953488372093023,
+      "detected_count": 22,
+      "synthetic_count": 21
+    }
+  ],
+  "forecast_path": "..\\reports\\04_forecast_predictions.csv",
+  "anomaly_path": "..\\reports\\04_anomaly_candidates.csv",
+  "summary_path": "..\\reports\\04_pipeline_summary.json",
+  "model_path": "..\\reports\\04_random_forest_pipeline.joblib",
+  "model_card_json_path": "..\\reports\\04_model_card.json",
+  "model_card_md_path": "..\\reports\\04_model_card.md",
+  "forecast_scores_table_path": "..\\reports\\tables\\04_forecast_scores.csv",
+  "anomaly_counts_table_path": "..\\reports\\tables\\04_anomaly_counts.csv",
+  "performance_table_path": "..\\reports\\tables\\04_pipeline_performance.csv",
+  "synthetic_anomaly_table_path": "..\\reports\\tables\\04_synthetic_anomaly_benchmark.csv",
+  "forecast_figure_path": "..\\reports\\figures\\04_random_forest_forecast.png",
+  "anomaly_figure_path": "..\\reports\\figures\\04_anomaly_candidates.png"
+}

@@ -1,0 +1,6 @@
+method,count
+anomaly_one_class_svm,264
+anomaly_isolation_forest,263
+anomaly_lof,263
+is_anomaly,101
+anomaly_zscore,56

@@ -1,0 +1,3 @@
+stage,seconds,rows,notes
+RandomForest fit,27.30744670002605,34896,Обучение финальной модели
+RandomForest predict,0.17232569999760017,8736,Инференс на test-периоде
